@@ -5,7 +5,7 @@ problem_num = sys.argv[1]
 MAX_POUNDS = 2**(32) - 1 
 MAX_MONEY = 2**(32) - 1
 MAX_N = 100000 #200,000 number of items
-MAX_C = 150000 #200,000 number of constraints
+MAX_C = 125000 #200,000 number of constraints
 name = "problem"
 rest_name = ".in"
 items = []
@@ -25,6 +25,9 @@ for i in range(1, int(MAX_N/4)):
 #create random constraints
 for i in range(0,int(MAX_C/4)):
     num_c = int(5*random.random())
+    #ensures there are at least 2 variables per constraint
+    if num_c < 2:
+        num_c += 2
     temp = ""
     for i in range(num_c):
         temp += str(random.choice(classes)) + ", "
