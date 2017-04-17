@@ -39,7 +39,6 @@ f = open(name + problem_num + rest_name, "w+")
 f.write(str(MAX_POUNDS) + "\n")
 f.write(str(MAX_MONEY) + "\n")
 f.write(str(MAX_N) + "\n")
-f.write(str(MAX_N) + "\n")
 f.write(str(MAX_C) + "\n")
 
 #write items
