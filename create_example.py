@@ -4,8 +4,10 @@ import sys
 problem_num = sys.argv[1]
 MAX_POUNDS = 2**(32) - 1 
 MAX_MONEY = 2**(32) - 1
-MAX_N = 100000 #200,000 number of items
-MAX_C = 125000 #200,000 number of constraints
+#MAX_N = 100000 #200,000 number of items
+MAX_N = 25000
+#MAX_C = 125000 #200,000 number of constraints
+MAX_C = 30000
 name = "problem"
 rest_name = ".in"
 items = []
@@ -13,7 +15,7 @@ constraints = []
 classes = [i for i in range(0,1000)]
 
 #create random items of class 1-1000 (can tweak parameters)
-for i in range(1, int(MAX_N/4)):
+for i in range(0, int(MAX_N)):
     c = random.choice(classes)
     weight = 1000*random.random()
     cost = 1000*random.random()
@@ -23,7 +25,7 @@ for i in range(1, int(MAX_N/4)):
     items.append(temp)
 
 #create random constraints
-for i in range(0,int(MAX_C/4)):
+for i in range(0,int(MAX_C)):
     num_c = int(5*random.random())
     #ensures there are at least 2 variables per constraint
     if num_c < 2:
