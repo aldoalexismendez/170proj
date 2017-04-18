@@ -30,9 +30,15 @@ for i in range(0,int(MAX_C)):
     #ensures there are at least 2 variables per constraint
     if num_c < 2:
         num_c += 2
-    temp = ""
+    temp = []
     for i in range(num_c):
-        temp += str(random.choice(classes)) + ", "
+        temp_num = random.choice(classes)
+        temp_str = str(temp_num) + ", "
+        if temp_str in temp:
+            temp_num = random.choice(classes)
+            temp_str = str(temp_num) + ", "
+        temp.append(temp_str)
+    temp = "".join(temp)
     temp = temp[:-2]
     constraints.append(temp)
 
