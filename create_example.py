@@ -4,10 +4,10 @@ import sys
 problem_num = sys.argv[1]
 MAX_POUNDS = 2**(32) - 1 
 MAX_MONEY = 2**(32) - 1
-#MAX_N = 100000 #200,000 number of items
-MAX_N = 25000
-#MAX_C = 125000 #200,000 number of constraints
-MAX_C = 30000
+MAX_N = 75000 #200,000 number of items
+#MAX_N = 25000
+MAX_C = 87000 #200,000 number of constraints
+#MAX_C = 30000
 name = "problem"
 rest_name = ".in"
 items = []
