@@ -2,6 +2,8 @@
 
 from __future__ import division
 import argparse
+import numpy as np 
+import pulp
 
 
 """
@@ -16,7 +18,15 @@ def solve(P, M, N, C, items, constraints):
 
   Return: a list of strings, corresponding to item names.
   """
+
   pass
+
+def my_objective_fn():
+  # create the LP object, set up as a maximization problem
+  prob = pulp.LpProblem("PickItems", pulp.LpMaximize)
+  
+  #set up decision variables
+  take_or_not = pulp.LpVariable('take_or_not', lowBound=0, upBound=1, cat=pulp.LpInteger)
 
 
 """
