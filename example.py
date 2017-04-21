@@ -23,11 +23,34 @@ def solve(P, M, N, C, items, constraints):
 
 def my_objective_fn():
   # create the LP object, set up as a maximization problem
-  prob = pulp.LpProblem("PickItems", pulp.LpMaximize)
+  problem = pulp.LpProblem("PickItems", pulp.LpMaximize)
   
   #set up decision variables
   take_or_not = pulp.LpVariable('take_or_not', lowBound=0, upBound=1, cat=pulp.LpInteger)
+  weight_P = pulp.LpVariable('weight_P', lowBound=0 )
+  budget_M = pulp.LpVariable('budget_M', lowBound=0)
+  
+  #TODO: this may need to be changed.
+  class_N = pulp.LpVariable('class_N', lowBound=1)
 
+  #===============================================
+  #OBJECTIVE FUNCTION BELOW
+  #===============================================
+
+  #model resale value 
+  resale_value =  
+
+  #model cost 
+  item_cost = 
+
+  #profit
+  profit = resale_value - item_cost
+  problem += profit # here's where we actually add it to the obj function
+
+  #===============================================
+  #CONSTRAINTS BELOW
+  #===============================================
+  
 
 """
 ===============================================================================
