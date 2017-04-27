@@ -6,6 +6,10 @@ import graph
 DIRECTORY = "../../project_instances/"
 OUTPUT_DIRECTORY = "../output/"
 
+#NEED TO IMPLEMENT, MUST RETURN LIST
+def indep_set(nodes):
+    return nodes
+
 for file_name in os.listdir(DIRECTORY):
     #Ensures that only .in files are opened
     if not file_name.endswith(".in"):
@@ -41,9 +45,10 @@ for file_name in os.listdir(DIRECTORY):
         constraints.append(temp)
 
     #Create independent set
+    indep_set = independent_set(items) #STILL NEED TO IMPLEMENT
+
     #place items of independent set into PQ based on weight/profit ratio
-    for i in range(5):
-        item = items[i]
+    for item in indep_set:
         ratio = float(item[2])/float(item[3])
         p.push(item, ratio)
 
