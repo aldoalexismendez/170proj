@@ -94,6 +94,9 @@ for file_name in os.listdir(DIRECTORY):
             total_weight += item_weight
             total_money += item_cost
 
+    if total_money > MAX_MONEY or total_weight > MAX_POUNDS:
+        items_taken = items_taken[:-1]
+
     #Create output file
     f = open(OUTPUT_DIRECTORY + file_name[:-3] + ".out", "w+")
     for item in items_taken:

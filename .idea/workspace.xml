@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ab20a86-4f5c-4755-84f7-309ae4627dfd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/submission_folder/code/pick_items_solver_greedy.py" afterPath="$PROJECT_DIR$/submission_folder/code/pick_items_solver_greedy.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/submission_folder/output/problem1.out" afterPath="$PROJECT_DIR$/submission_folder/output/problem1.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/submission_folder/team_name.txt" afterPath="$PROJECT_DIR$/submission_folder/team_name.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +22,8 @@
       <file leaf-file-name="pick_items_solver_greedy.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/submission_folder/code/pick_items_solver_greedy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="94" column="36" lean-forward="false" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+            <state relative-caret-position="1440">
+              <caret line="96" column="59" lean-forward="false" selection-start-line="96" selection-start-column="59" selection-end-line="96" selection-end-column="59" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -299,8 +298,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/submission_folder/code/pick_items_solver_greedy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="94" column="36" lean-forward="false" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+        <state relative-caret-position="1440">
+          <caret line="96" column="59" lean-forward="false" selection-start-line="96" selection-start-column="59" selection-end-line="96" selection-end-column="59" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
