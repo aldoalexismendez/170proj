@@ -1,14 +1,8 @@
 import os
-import numpy as np
 import pq
-import graph
 
 DIRECTORY = "../../project_instances/"
 OUTPUT_DIRECTORY = "../output/"
-
-#NEED TO IMPLEMENT, MUST RETURN LIST
-def indep_set(nodes):
-    return nodes
 
 for file_name in os.listdir(DIRECTORY):
     #Ensures that only .in files are opened
@@ -23,7 +17,6 @@ for file_name in os.listdir(DIRECTORY):
     C = int(file_obj.readline())
     items = []
     constraints = []
-    #constraint_matrix = np.ones((N,N))
     p = pq.PriorityQueue()#keeps track of best items
     total_money = 0
     total_weight = 0
@@ -39,12 +32,6 @@ for file_name in os.listdir(DIRECTORY):
         temp = file_obj.readline()
         temp = temp[:-1]
         temp = [int(compatible) for compatible in temp.split(",")]
-        #create compatibility matrix    
-        #for j in temp:
-        #    for k in temp:
-        #        if j != k: #can only be incompatible with others, not themselves
-        #            constraint_matrix[j][k] = 0
-        #constraints.append(temp)
 
         #Populate constraint map
         for j in temp:
@@ -55,15 +42,8 @@ for file_name in os.listdir(DIRECTORY):
                 except KeyError:
                     constraints_map[j] = [q]
 
-    #Create independent set
-    #indep_set = independent_set(items) #STILL NEED TO IMPLEMENT
-    #random_set = random.shuffle(items)
-    random_set = items
-
-    #place items of independent set into PQ based on weight/profit ratio
-    for item in random_set:
-        #print float(item[2])
-        #print float(item[3])
+    #place items into PQ based on weight/profit ratio
+    for item in items:
         try:
             ratio = float(item[2])/(float(item[4]) - float(item[3]))
         except ZeroDivisionError:
@@ -72,7 +52,6 @@ for file_name in os.listdir(DIRECTORY):
             p.push(item, ratio)
 
     #Greedy part
-    #total_money <= MAX_MONEY and total_weight <= MAX_POUNDS and
     while not p.isEmpty():
         item = p.pop()
         item_name = item[0]
@@ -81,21 +60,18 @@ for file_name in os.listdir(DIRECTORY):
         item_cost = float(item[3])
         incompatible_classes = constraints_map[item_class]
 
-        ##
+        #Constraint
         if item_class in total_constraints: #item is incompatible with classes so far
             continue
-        ##
 
-        items_taken.append(item_name)
+        #items_taken.append(item_name)
         for c in incompatible_classes: total_constraints.append(c)
         if total_weight + item_weight > MAX_POUNDS or total_money + item_cost > MAX_MONEY:
             break
         else:
             total_weight += item_weight
             total_money += item_cost
-
-    if total_money > MAX_MONEY or total_weight > MAX_POUNDS:
-        items_taken = items_taken[:-1]
+            items_taken.append(item_name)
 
     #Create output file
     f = open(OUTPUT_DIRECTORY + file_name[:-3] + ".out", "w+")
