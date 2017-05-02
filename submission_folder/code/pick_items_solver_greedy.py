@@ -67,7 +67,8 @@ for file_name in os.listdir(DIRECTORY):
         #items_taken.append(item_name)
         for c in incompatible_classes: total_constraints.append(c)
         if total_weight + item_weight > MAX_POUNDS or total_money + item_cost > MAX_MONEY:
-            break
+            continue
+            #break
         else:
             total_weight += item_weight
             total_money += item_cost
