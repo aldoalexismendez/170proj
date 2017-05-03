@@ -1,6 +1,8 @@
 import os
 import pq
 
+#Used PriorityQueue class from CS188
+
 DIRECTORY = "../../project_instances/"
 OUTPUT_DIRECTORY = "../output/"
 
@@ -48,7 +50,7 @@ for file_name in os.listdir(DIRECTORY):
             ratio = float(item[2])/(float(item[4]) - float(item[3]))
         except ZeroDivisionError:
             ratio = 0
-        if ratio >= 0: #ensures no items with negative profit are added
+        if ratio >= 0: #ensures only non-negative profit items are added
             p.push(item, ratio)
 
     #Greedy part
@@ -68,7 +70,6 @@ for file_name in os.listdir(DIRECTORY):
         for c in incompatible_classes: total_constraints.append(c)
         if total_weight + item_weight > MAX_POUNDS or total_money + item_cost > MAX_MONEY:
             continue
-            #break
         else:
             total_weight += item_weight
             total_money += item_cost
